@@ -7,7 +7,7 @@ import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
   templateUrl: './products-form.html',
   styleUrl: './products-form.css',
 })
-export class ProductsForm {
+export class ProductsFormComponent {
 
   //Los datos los enviamos al padre con output
   @Output() productoCreado = new EventEmitter<any>();
