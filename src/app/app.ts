@@ -1,12 +1,20 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ProductService, Product } from './services/product';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   protected readonly title = signal('gestion-producto');
+
+  //cargamos el servicio productservice
+  constructor(private productService: ProductService) {
+    this.productService.cargarProductos().subscribe(
+      (datos: Product[]) => console.log('Productos: ', datos)
+    )
+  }
+
 }
