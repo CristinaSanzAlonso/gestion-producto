@@ -1,21 +1,20 @@
 <h2 class="fw-semibold mb-3">Listado de Productos</h2>
 
 <ul class="list-group">
-    <!--Mostramos los productos con un for, los vamos a ordenar por su id-->
-    @for (product of productos; track product._id) {
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-        <span>
-            <strong>{{ product.name }}</strong>
-            <span class="text-muted">({{ product.category }})</span>
-        </span>
-
-        <span class="fw-bold text-primary">{{ product.price }} €</span>
-    </li>
-    }
-    <!--SI está vacío, lanzamos mensaje-->
-    @empty {
-    <li class="list-group-item text-muted">
-        No hay productos para mostrar…
-    </li>
-    }
+    <div class="row g-4">
+        <!--Mostramos los productos con un for, los vamos a ordenar por su id-->
+        @for (product of productos; track product._id) {
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <!--el dieño lo hacemos desde product-card-->
+            <!--el product-card va a cargar la información que le viene de product-->
+            <app-products-card [product]="product"></app-products-card>
+        </div>
+        }
+        <!--Si está vacío, lanzamos mensaje-->
+        @empty {
+        <li class="list-group-item text-muted">
+            No hay productos para mostrar…
+        </li>
+        }
+    </div>
 </ul>
