@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+// importamos las clases necesarias para trabajar con formularios reactivos
 import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -9,10 +10,11 @@ import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 })
 export class ProductsFormComponent {
 
-  //Los datos los enviamos al padre con output
+  // Output: permite enviar datos desde este componente hijo al padre
+  // En este caso, emitimos un evento cuando se crea un producto
   @Output() productoCreado = new EventEmitter<any>();
 
-  //Hacemos el grupo de formulario con los valores por defecto
+  //Definimos el formulario reactivo con sus controles y valores por defecto
   formulario = new FormGroup({
     name: new FormControl(''),
     description: new FormControl(''),
@@ -24,6 +26,7 @@ export class ProductsFormComponent {
 
   //creamos el método enviar
   enviar() {
+    // enviamos los datos del formulario al componente padre
     this.productoCreado.emit(this.formulario.value);
     //reseteamos el formulario
     this.formulario.reset(

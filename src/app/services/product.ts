@@ -1,7 +1,11 @@
+// Decorador que marca esta clase como un servicio inyectable en Angular
 import { Injectable } from '@angular/core';
+// Cliente HTTP de Angular para hacer peticiones a APIs REST
 import { HttpClient } from '@angular/common/http';
+//Para crear como una base de datos en memoria
 import { BehaviorSubject } from 'rxjs';
 
+//definimos la estructura de un producto
 export interface Product {
   _id: string;
   name: string;
@@ -14,14 +18,16 @@ export interface Product {
 
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root', // Hace que el servicio esté disponible en toda la aplicación
 })
 export class ProductService {
-  //recoge el modelo (interfaz de tipo Product) que tranforma en un array de productos
+  //url que contiene los productos
   private url = 'https://api.npoint.io/1dee63ad8437c82b24fe'
+  //guarda y emite la lista de productos
   private productosSubject = new BehaviorSubject<Product[]>([]);
+  //observable que se utilizara para que los compenentes vean los cambios
   productos$ = this.productosSubject.asObservable();
-
+  //array de productos 
   private productosOriginales: Product[] = [];
 
   constructor(private http: HttpClient) {

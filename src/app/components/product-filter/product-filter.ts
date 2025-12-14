@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+// Importamos CommonModule para poder usar directivas básicas de Angular (ngIf, ngFor, etc.)
 import { CommonModule } from '@angular/common';
+// Importamos el servicio de productos, que contiene la lógica de filtrado
 import { ProductService } from '../../services/product';
 
 @Component({
@@ -17,7 +19,7 @@ export class ProductFilterComponent {
 
   constructor(private productService: ProductService) { }
 
-  //métodos que escuchan los cambios en el formulario y comunican esos cambios al servicio
+  //métodos que escuchan los cambios en el formulario y comunican esos cambios al servicio para filtrar
 
   onNombreChange(event: Event) {
     const valor = (event.target as HTMLInputElement).value;
