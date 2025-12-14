@@ -13,15 +13,14 @@ export class App {
   protected readonly title = signal('gestion-producto');
 
   //cargamos el servicio productservice para ver si lo carga al inspeccionar
-  /*constructor(private productService: ProductService) {
-    this.productService.cargarProductos().subscribe(
-      (datos: Product[]) => console.log('Productos: ', datos)
-    )
-  }*/
+  constructor(private productService: ProductService) {
+    //this.productService.cargarProductos().subscribe(
+    //(datos: Product[]) => console.log('Productos: ', datos)
+  }
 
   //acción que recibe el datos del output
   onProductoCreado(producto: any) {
-    console.log('Producto recibido: ', producto)
+    this.productService.agregarProducto(producto);
   }
 
 
