@@ -1,1 +1,31 @@
-<p>product-filter works!</p>
+<h2 class="fw-semibold mb-3">Filtrado de Productos</h2>
+
+<div class="container my-3">
+    <form class="row g-3">
+        <!-- Filtro por nombre -->
+        <div class="col-md-4">
+            <label for="nombre" class="form-label">Nombre del producto</label>
+            <input type="text" id="nombre" class="form-control" (input)="onNombreChange($event)"
+                placeholder="Escribe un nombre...">
+        </div>
+
+        <!-- Filtro por categoría -->
+        <div class="col-md-4">
+            <label for="categoria" class="form-label">Categoría</label>
+            <select id="categoria" class="form-select" (change)="onCategoriaChange($event)">
+                <option value="">Todas</option>
+                <option value="ropa">Ropa</option>
+                <option value="accesorios">Accesorios</option>
+                <option value="tecnologia">Tecnología</option>
+            </select>
+        </div>
+
+        <!-- Filtro por activo -->
+        <div class="col-md-4 d-flex align-items-center">
+            <div class="form-check mt-4">
+                <input type="checkbox" id="activo" class="form-check-input" (change)="onActivoChange($event)">
+                <label for="activo" class="form-check-label">Solo activos</label>
+            </div>
+        </div>
+    </form>
+</div>
