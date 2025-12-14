@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Product } from '../../services/product';
+import { ProductService } from '../../services/product';
 
 @Component({
   selector: 'app-products-card',
@@ -10,5 +11,12 @@ import { Product } from '../../services/product';
 export class ProductsCard {
 
   @Input() product!: Product;
+
+  constructor(private productService: ProductService) { }
+
+  //añadimos el método eliminar
+  eliminar() {
+    this.productService.eliminarProducto(this.product._id);
+  }
 
 }
