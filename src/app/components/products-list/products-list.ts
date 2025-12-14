@@ -14,9 +14,9 @@ export class ProductsList {
   productos: Product[] = []
 
   constructor(private productService: ProductService) {
-    this.productService.cargarProductos().subscribe(datos => {
-      this.productos = datos;
-      console.log('Productos recibidos: ', datos);
+    this.productService.productos$.subscribe(productos => {
+      this.productos = productos;
+      console.log('Productos recibidos:', productos);
     });
   }
 }
