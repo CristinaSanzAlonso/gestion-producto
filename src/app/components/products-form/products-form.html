@@ -1,6 +1,4 @@
 <!--Hacemos la llamada al formulario-->
-<h2 class="fw-semibold mb-3">Añade un producto</h2>
-
 <div class="card p-4 shadow-sm">
 
     <form [formGroup]="formulario" (ngSubmit)="enviar()">
@@ -31,11 +29,11 @@
         </div>
 
         <div class="form-check mb-3">
-            <input type="checkbox" class="form-check-input" formControlName="active" id="activoCheck">
+            <input type="checkbox" class="form-check-input is-valid" formControlName="active" id="activoCheck">
             <label for="activoCheck" class="form-check-label">Activo</label>
         </div>
 
-        <button type="submit" class="btn btn-primary w-100">
+        <button type="submit" class="btn btn-secondary w-100">
             Crear producto
         </button>
 

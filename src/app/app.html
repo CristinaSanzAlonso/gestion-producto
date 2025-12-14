@@ -1,15 +1,13 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Actividad 2</title>
 </head>
-
-<body>
-  <!-- CABECERA -->
-  <header class="navbar navbar-expand-lg navbar-dark bg-primary py-3 mb-4">
+<body>-->
+<!-- CABECERA -->
+<!--<header class="navbar navbar-expand-lg navbar-dark bg-primary py-3 mb-4">
     <div class="container d-flex justify-content-between align-items-center">
       <h1 class="h3">Gestión de Productos</h1>
 
@@ -18,10 +16,10 @@
         <a href="#" class="text-white text-decoration-none">Contacto</a>
       </nav>
     </div>
-  </header>
+  </header>-->
 
-  <!-- CONTENIDO PRINCIPAL -->
-  <main class="container mb-5">
+<!-- CONTENIDO PRINCIPAL -->
+<!--<main class="container mb-5">
     <app-products-form (productoCreado)="onProductoCreado($event)">
     </app-products-form>
     <br>
@@ -29,6 +27,89 @@
     <br>
     <app-products-list></app-products-list>
 
+  </main>-->
+
+<!-- FOOTER -->
+<!--<footer class="bg-light py-3 text-center border-top mt-5">
+    <p class="m-0 text-muted">
+      © 2025 · Actividad DWEC · Angular 18
+    </p>
+  </footer>
+</body>
+
+</html>-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actividad 2</title>
+</head>
+
+<body class="bg-light">
+
+  <!-- CABECERA -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fs-1" href="#">Gestión de Productos</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="#" class="nav-link active">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="container my-5">
+    <!-- Formulario de productos -->
+    <section class="mb-4">
+      <div class="card shadow-sm">
+        <div class="card-header bg-dark text-white">
+          <h5 class="mb-0">Añadir Producto</h5>
+        </div>
+        <div class="card-body">
+          <app-products-form (productoCreado)="onProductoCreado($event)"></app-products-form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="mb-4">
+      <div class="card shadow-sm">
+        <div class="card-header bg-dark text-white">
+          <h5 class="mb-0">Filtros</h5>
+        </div>
+        <div class="card-body">
+          <app-product-filter></app-product-filter>
+        </div>
+      </div>
+    </section>
+
+    <!-- Listado de productos -->
+    <section>
+      <div class="card shadow-sm">
+        <div class="card-header bg-dark text-white">
+          <h5 class="mb-0">Listado de Productos</h5>
+        </div>
+        <div class="card-body">
+          <app-products-list></app-products-list>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- FOOTER -->
@@ -37,6 +118,7 @@
       © 2025 · Actividad DWEC · Angular 18
     </p>
   </footer>
+
 </body>
 
 </html>
